@@ -88,13 +88,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #장고랑 호환되게 버젼 맞춰주
 pymysql.version_info=(1,4,2,"final",0)
 pymysql.install_as_MySQLdb()
+
+from password import dbpassword
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'HOST':'onlineshop.cybfeux9ym55.ap-northeast-2.rds.amazonaws.com',
         'NAME': 'onlineshop',
         'USER':'admin',
-        'PASSWORD':'admin12345',
+        'PASSWORD':dbpassword,
         'PORT':'3306',
 
     }
